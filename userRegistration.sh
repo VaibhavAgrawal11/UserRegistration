@@ -1,5 +1,5 @@
 #!/bin/bash -x
-printf "Feature to validate password should have exactly one special character.\n"
+printf "Validate email with given test cases.\n"
 #cCONSTANTS
 COUNTRYCODE=91
 
@@ -52,7 +52,7 @@ function checkEmail()
 {
 	echo "Enter your email address:"
 	read email
-	emailPat=^abc.[a-zA-Z0-9]*@bl.\co
+	emailPat="^abc([+]?[-]?[.]?[_]?[\w]+)?[@][a-z]+[.][a-z]{2,}([.]?[a-z]+)?$"
 	validate $email $emailPat
 	if((flag==0))
    then 
