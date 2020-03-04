@@ -1,5 +1,5 @@
 #!/bin/bash -x
-printf "Feature to validate mobile number."
+printf "Feature to validate password length."
 #cCONSTANTS
 COUNTRYCODE=91
 function validate()
@@ -38,4 +38,8 @@ then
 else
 	echo no
 fi
-
+#VALIDATE PASSWORD LENGTH
+echo "Enter your password:"
+read password
+passwordPat="^.{8,}"
+validate $password $passwordPat
