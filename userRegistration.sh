@@ -1,5 +1,5 @@
 #!/bin/bash -x
-printf "Feature to validate password should have atleast one upper case."
+printf "Feature to validate password should have atleast one numeric digit."
 #cCONSTANTS
 COUNTRYCODE=91
 function validate()
@@ -43,7 +43,11 @@ echo "Enter your password:"
 read password
 #VALIDATE PASSWORD LENGTH
 passwordPatLength="^.{8,}"
+validate $password $passwordPatLength
 #VALIDATE PASSWORD HAVE ATLEAST ONE UPPERCASE
 passwordPatUpperCase="[A-Z]{1,}"
-validate $password $passwordPatLength
 validate $password $passwordPatUpperCase
+#VALIDATE PASSWORD HAVE ATLEAST ONE NUMERIC DIGIT
+passwordPatNumeric="\d{1,}"
+validate $password $passwordPatNumeric
+
