@@ -1,5 +1,5 @@
 #!/bin/bash -x
-printf "Feature to validate password length."
+printf "Feature to validate password should have atleast one upper case."
 #cCONSTANTS
 COUNTRYCODE=91
 function validate()
@@ -38,8 +38,12 @@ then
 else
 	echo no
 fi
-#VALIDATE PASSWORD LENGTH
+#VALIDATE PASSWORD
 echo "Enter your password:"
 read password
-passwordPat="^.{8,}"
-validate $password $passwordPat
+#VALIDATE PASSWORD LENGTH
+passwordPatLength="^.{8,}"
+#VALIDATE PASSWORD HAVE ATLEAST ONE UPPERCASE
+passwordPatUpperCase="[A-Z]{1,}"
+validate $password $passwordPatLength
+validate $password $passwordPatUpperCase
